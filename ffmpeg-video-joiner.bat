@@ -58,7 +58,7 @@ echo -- Joiner script started. Time: %time% >> %log_file% --
 				set /a found=found+1
 				echo  - create list: %%d
 				echo  - create list: %%d >> %log_file%
-				(for /f "delims=" %%f in ('dir /b /od "%%d\*%format%"') do @echo file '%%f') > "%%d/%%d%list_prefix%"
+				(for /f "delims=" %%f in ('dir /b /on "%%d\*%format%"') do @echo file '%%f') > "%%d/%%d%list_prefix%"
 			) else (
 				echo  - no %format% files inside folder '%%d'
 			)
